@@ -1,0 +1,14 @@
+This is a silly server which alternatively tells a raspberry pi to turn something ON and OFF on GPIO Pin 17.
+
+There are numerous prerequisites:
+RPi Side:
+Python
+GPIO library: https://pypi.python.org/pypi/RPi.GPIO
+LEDs, Resistors etc... Something to turn ON and OFF!
+
+Server side:
+Nodejs
+
+It should then run with:
+Server side: 	nodejs main.js
+RPi side:		./main.py <hostname>
