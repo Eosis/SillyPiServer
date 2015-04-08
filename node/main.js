@@ -1,4 +1,3 @@
-#!/usr/local/bin/node
 var http = require('http');
 var counter = 0;
 var server = http.createServer(function(req, res) {
