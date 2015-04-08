@@ -1,15 +1,20 @@
 #!/usr/bin/python
 import time
 import RPi.GPIO as GPIO
+import requests
+import sys
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
 
-import requests
+if len(sys.argv) != 2:
+	print "./main.py <hostname>"
+	exit(1)
 
+hostname = sys.argv[1]
 
 while True:
-	r = requests.get('http://192.168.0.5:8080')
+	r = requests.get("http://" + hostname + ":8080")
 	print r.content
 
 	if r.content == 'ON\r\n\r\n':
